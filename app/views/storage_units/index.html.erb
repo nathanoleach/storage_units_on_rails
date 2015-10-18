@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Storage Units</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Annual rate</th>
+      <th>Monthly rate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @storage_units.each do |storage_unit| %>
+      <tr>
+        <td><%= storage_unit.name %></td>
+        <td><%= storage_unit.description %></td>
+        <td><%= storage_unit.length %></td>
+        <td><%= storage_unit.width %></td>
+        <td><%= storage_unit.height %></td>
+        <td><%= storage_unit.annual_rate %></td>
+        <td><%= storage_unit.monthly_rate %></td>
+        <td><%= link_to 'Show', storage_unit %></td>
+        <td><%= link_to 'Edit', edit_storage_unit_path(storage_unit) %></td>
+        <td><%= link_to 'Destroy', storage_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Storage unit', new_storage_unit_path %>

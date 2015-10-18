@@ -1,0 +1,49 @@
+<%= form_for(@storage_unit) do |f| %>
+  <% if @storage_unit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@storage_unit.errors.count, "error") %> prohibited this storage_unit from being saved:</h2>
+
+      <ul>
+      <% @storage_unit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br>
+    <%= f.number_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br>
+    <%= f.number_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :renter_id %><br>
+    <%= f.number_field :renter_id %>
+  </div>
+  <div class="field">
+    <%= f.label :annual_rate %><br>
+    <%= f.text_field :annual_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :monthly_rate %><br>
+    <%= f.text_field :monthly_rate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

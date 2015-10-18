@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Renter:</strong>
+  <%= @contract.renter.full_name %>
+</p>
+
+<p>
+  <strong>Storage unit:</strong>
+  <%= @contract.storage_unit.name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @contract.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @contract.end_date %>
+</p>
+
+<p>
+  <strong>Billing period:</strong>
+  <%= @contract.billing_period %>
+</p>
+
+<p>
+  <strong>Billing rate:</strong>
+  <%= @contract.billing_rate %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @contract.notes %>
+</p>
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>

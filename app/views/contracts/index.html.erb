@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rental Contracts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Renter</th>
+      <th>Storage unit</th>    
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Billing period</th>
+      <th>Billing rate</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contracts.each do |contract| %>
+      <tr>
+        <td><%= contract.renter.full_name %></td>
+        <td><%= contract.storage_unit.name %></td>      
+        <td><%= contract.start_date %></td>
+        <td><%= contract.end_date %></td>
+        <td><%= contract.billing_period %></td>
+        <td><%= contract.billing_rate %></td>
+        <td><%= contract.notes %></td>
+        <td><%= link_to 'Show', contract %></td>
+        <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
+        <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contract', new_contract_path %>

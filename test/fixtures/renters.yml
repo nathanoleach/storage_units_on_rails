@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: Renter
+  last_name: One
+  company: Company One
+  address: One Any Street
+  city: City One
+  state: State One
+  zip: 12345
+  phone: 123-456-7890
+  fax: 098-765-4321
+  email: one@email.com
+
+two:
+  first_name: Renter
+  last_name: Two
+  company: Company Two
+  address: Two Any Street
+  city: City Two
+  state: State Two
+  zip: 09876
+  phone: 987-654-3210
+  fax: 123-456-7890
+  email: two@email.com

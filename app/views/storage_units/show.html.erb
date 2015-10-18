@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @storage_unit.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @storage_unit.description %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @storage_unit.length %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @storage_unit.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @storage_unit.height %>
+</p>
+
+<p>
+  <strong>Annual rate:</strong>
+  <%= @storage_unit.annual_rate %>
+</p>
+
+<p>
+  <strong>Monthly rate:</strong>
+  <%= @storage_unit.monthly_rate %>
+</p>
+
+<%= link_to 'Edit', edit_storage_unit_path(@storage_unit) %> |
+<%= link_to 'Back', storage_units_path %>
+
+<%= render 'common_partials/contract_list', :contracts => @storage_unit.contracts %> 
