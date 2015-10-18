@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% i = 0 %>
+<% 2.times do %>
+<% i += 1 %>
+building_<%= i.to_s %>:
+  name: Building <%= i.to_s %>
+  description: Description of building <%= i.to_s %>
+  street: <%= i.to_s %> Any Street
+  city: Any Town <%= i.to_s %>
+  state: State <%= i.to_s %>
+  zip: <%= i.to_s %><%= i.to_s %><%= i.to_s %><%= i.to_s %><%= i.to_s %>
+  phone: 800-555-<%= i.to_s %><%= i.to_s %><%= i.to_s %><%= i.to_s %>
+  email: <%= i.to_s %>@building.com
+<% end %>

@@ -69,6 +69,6 @@ class StorageUnitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def storage_unit_params
-      params.require(:storage_unit).permit(:name, :description, :length, :width, :height, :renter_id, :annual_rate, :monthly_rate)
+      params.require(:storage_unit).permit(:name, :description, :length, :width, :height, :renter_id, :annual_rate, :monthly_rate, :building_id)
     end
 end

@@ -1,25 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+<% i = 0 %>
+<% 10.times do %>
+<% i += 1 %>
+renter_<%= i.to_s %>:
   first_name: Renter
-  last_name: One
-  company: Company One
-  address: One Any Street
-  city: City One
-  state: State One
-  zip: 12345
-  phone: 123-456-7890
-  fax: 098-765-4321
-  email: one@email.com
-
-two:
-  first_name: Renter
-  last_name: Two
-  company: Company Two
-  address: Two Any Street
-  city: City Two
-  state: State Two
-  zip: 09876
-  phone: 987-654-3210
-  fax: 123-456-7890
-  email: two@email.com
+  last_name: <%= i.to_s %>
+  company: Company <%= i.to_s %>
+  address: <%= i.to_s %> Any Street
+  city: City <%= i.to_s %>
+  state: State <%= i.to_s %>
+  zip: 12345-<%= i.to_s %>
+  phone: 123-456-7890-<%= i.to_s %>
+  fax: 098-765-4321-<%= i.to_s %>
+  email: <%= i.to_s %>@email.com
+<% end %>

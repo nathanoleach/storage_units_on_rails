@@ -2,10 +2,12 @@
 
 <h1>Storage Units</h1>
 
-<table>
+<table id="storage-units">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Available?</th>
+      <th>Building</th>
+      <th>Unit</th>
       <th>Description</th>
       <th>Length</th>
       <th>Width</th>
@@ -19,6 +21,15 @@
   <tbody>
     <% @storage_units.each do |storage_unit| %>
       <tr>
+        <td>
+          <% if storage_unit.available? %>
+            Yes 
+            <%= link_to '(Rent Unit)', new_contract_path(:storage_unit_id => storage_unit.id) %>
+          <% else %>
+            No
+          <% end %>
+        </td>
+        <td><%= storage_unit.building.name  if storage_unit.building %></td>
         <td><%= storage_unit.name %></td>
         <td><%= storage_unit.description %></td>
         <td><%= storage_unit.length %></td>

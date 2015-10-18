@@ -2,9 +2,10 @@
 
 <h1>Listing Renters</h1>
 
-<table>
+<table id="renters">
   <thead>
     <tr>
+      <th></th>
       <th>First name</th>
       <th>Last name</th>
       <th>Company</th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @renters.each do |renter| %>
       <tr>
+        <td><%= link_to 'Rent a Unit', new_contract_path(:renter_id => renter.id) %></td>
         <td><%= renter.first_name %></td>
         <td><%= renter.last_name %></td>
         <td><%= renter.company %></td>

@@ -1,19 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  start_date: 2015-10-18
-  end_date: 2015-10-18
-  billing_period: MyString
-  billing_rate: 1.5
-  renter_id: 1
-  storage_unit_id: 1
-  notes: MyText
-
-two:
-  start_date: 2015-10-18
-  end_date: 2015-10-18
-  billing_period: MyString
-  billing_rate: 1.5
-  renter_id: 1
-  storage_unit_id: 1
-  notes: MyText
+<% i = 0 %>
+<% 10.times do %>
+<% i += 1 %>
+contract_<%= i.to_s %>:
+  start_date: <%= Date.today - i %>
+  end_date: <%= Date.today + 365.days - i %>
+<% if i.divmod(2)[1] == 0 %>
+  billing_period: month
+<% else %>
+  billing_period: year
+<% end %>
+  billing_rate: <%= i * 10.00 %>
+  renter_id: <%= Renter.offset(rand(Renter.count)).first.id %>
+  storage_unit_id: <%= StorageUnit.offset(rand(StorageUnit.count)).first.id %>
+  notes: Storage unit contract <%= i.to_s %>
+<% end %>

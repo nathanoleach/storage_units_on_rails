@@ -1,6 +1,9 @@
+<h1>Contracts</h1>
+
 <table>
   <thead>
     <tr>
+      <th>Active?</th>
       <th>Renter</th>
       <th>Storage unit</th>    
       <th>Start date</th>
@@ -15,6 +18,7 @@
   <tbody>
   <% contracts.each do |contract| %>
     <tr>
+      <td><%= contract.renter.valid? %></td>
       <td><%= contract.renter.full_name %></td>
       <td><%= contract.storage_unit.name %></td>      
       <td><%= contract.start_date %></td>

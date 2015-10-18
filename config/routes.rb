@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :buildings
   resources :contracts
   resources :renters
   resources :storage_units

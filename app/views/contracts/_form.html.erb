@@ -12,11 +12,11 @@
   <% end %>
   <div class="field">
     <%= f.label :renter_id %><br>
-    <%= collection_select(:contract, :renter_id, Renter.all, :id, :full_name) %>
+    <%= collection_select(:contract, :renter_id, Renter.all, :id, :full_name, prompt: true, :selected => params['renter_id']) %>
   </div>
   <div class="field">
     <%= f.label :storage_unit_id %><br>
-    <%= collection_select(:contract, :storage_unit_id, StorageUnit.all, :id, :name) %>
+    <%= collection_select(:contract, :storage_unit_id, StorageUnit.available, :id, :name, prompt: true, :selected => params['storage_unit_id']) %>
   </div>
   <div class="field">
     <%= f.label :start_date %><br>
